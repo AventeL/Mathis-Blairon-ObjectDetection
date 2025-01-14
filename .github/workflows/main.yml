@@ -14,12 +14,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+          global-json-file: global.json
 
       - name: Restore dependencies
         run: dotnet restore
@@ -36,12 +37,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+          global-json-file: global.json
 
       - name: Restore dependencies
         run: dotnet restore
@@ -53,7 +55,7 @@ jobs:
         run: dotnet publish Mathis.Blairon.ObjectDetection.Console/Mathis.Blairon.ObjectDetection.Console.csproj --configuration Release --runtime win-x64 --self-contained -p:PublishSingleFile=true -o ./publish
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: published-app
           path: ./publish
