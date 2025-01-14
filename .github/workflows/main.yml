@@ -51,3 +51,9 @@ jobs:
 
       - name: Publish
         run: dotnet publish Mathis.Blairon.ObjectDetection.Console/Mathis.Blairon.ObjectDetection.Console.csproj --configuration Release --runtime win-x64 --self-contained -p:PublishSingleFile=true -o ./publish
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: published-app
+          path: ./publish
