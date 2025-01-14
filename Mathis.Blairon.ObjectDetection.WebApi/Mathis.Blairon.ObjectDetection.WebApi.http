@@ -1,0 +1,6 @@
+@Mathis.Blairon.ObjectDetection.WebApi_HostAddress = http://localhost:5188
+
+GET {{Mathis.Blairon.ObjectDetection.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mathis.Blairon.ObjectDetection", "Mathis.Blairon.ObjectDetection\Mathis.Blairon.ObjectDetection.csproj", "{F52B0E52-A11A-4E21-9973-C3B74B969CE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mathis.Blairon.ObjectDetection.Tests", "Mathis.Blairon.ObjectDetection.Tests\Mathis.Blairon.ObjectDetection.Tests.csproj", "{425A38EF-2713-4D7C-9AFB-EADC2B47F57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mathis.Blairon.ObjectDetection.Console", "Mathis.Blairon.ObjectDetection.Console\Mathis.Blairon.ObjectDetection.Console.csproj", "{050DF035-2177-4868-894D-C78019C95836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mathis.Blairon.ObjectDetection.WebApi", "Mathis.Blairon.ObjectDetection.WebApi\Mathis.Blairon.ObjectDetection.WebApi.csproj", "{ADAD0088-5B4A-4EB7-9879-A8B331587EB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F52B0E52-A11A-4E21-9973-C3B74B969CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52B0E52-A11A-4E21-9973-C3B74B969CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52B0E52-A11A-4E21-9973-C3B74B969CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52B0E52-A11A-4E21-9973-C3B74B969CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{425A38EF-2713-4D7C-9AFB-EADC2B47F57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{425A38EF-2713-4D7C-9AFB-EADC2B47F57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{425A38EF-2713-4D7C-9AFB-EADC2B47F57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{425A38EF-2713-4D7C-9AFB-EADC2B47F57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050DF035-2177-4868-894D-C78019C95836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050DF035-2177-4868-894D-C78019C95836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050DF035-2177-4868-894D-C78019C95836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050DF035-2177-4868-894D-C78019C95836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADAD0088-5B4A-4EB7-9879-A8B331587EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAD0088-5B4A-4EB7-9879-A8B331587EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAD0088-5B4A-4EB7-9879-A8B331587EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAD0088-5B4A-4EB7-9879-A8B331587EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
