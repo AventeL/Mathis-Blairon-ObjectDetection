@@ -9,8 +9,30 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Run tests
+        run: dotnet test --no-build --verbosity normal
+
+  publish:
+    runs-on: windows-latest
+    needs: test
 
     steps:
       - name: Checkout code
@@ -29,22 +51,3 @@ jobs:
 
       - name: Publish
         run: dotnet publish Mathis.Blairon.ObjectDetection.Console/Mathis.Blairon.ObjectDetection.Console.csproj --configuration Release --runtime win-x64 --self-contained -p:PublishSingleFile=true -o ./publish
-
-  test:
-    runs-on: windows-latest
-    needs: build
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: '8.0.x'
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Run tests
-        run: dotnet test --no-build --verbosity normal
