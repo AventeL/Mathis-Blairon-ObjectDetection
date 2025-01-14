@@ -2,21 +2,34 @@
 
 public class ObjectDetection
 {
-    public async Task<IList<ObjectDetectionResult>>
-        DetectObjectInScenesAsync(IList<byte[]> imagesSceneData)
+    public async Task<IList<ObjectDetectionResult>> DetectObjectInScenesAsync(IList<byte[]> imagesSceneData)
     {
-        await Task.Delay(1000);
-// TODO implement your code here
-        throw new NotImplementedException();
+        var tasks = new List<Task<ObjectDetectionResult>>();
+
+        foreach (var imageData in imagesSceneData) tasks.Add(Task.Run(() => DetectObjectsInImage(imageData)));
+
+        var results = await Task.WhenAll(tasks);
+        return results;
     }
 
-    public async Task<IList<ObjectDetectionResult>> DetectObjectInScenesAsyncMocked(IList<byte[]>
-        imagesSceneData)
+    private ObjectDetectionResult DetectObjectsInImage(byte[] imageData)
+    {
+        var yolo = new Yolo();
+        var yoloOutput = yolo.Detect(imageData);
+
+        return new ObjectDetectionResult
+        {
+            ImageData = imageData,
+            Box = yoloOutput.Boxes
+        };
+    }
+
+    public async Task<IList<ObjectDetectionResult>> DetectObjectInScenesAsyncMocked(IList<byte[]> imagesSceneData)
     {
         IList<ObjectDetectionResult> results = new List<ObjectDetectionResult>();
         results.Add(new ObjectDetectionResult
         {
-            ImageData = [0],
+            ImageData = new byte[] { 0 },
             Box = new List<BoundingBox>()
             {
                 new()
@@ -28,7 +41,7 @@ public class ObjectDetection
         });
         results.Add(new ObjectDetectionResult
         {
-            ImageData = [0],
+            ImageData = new byte[] { 0 },
             Box = new List<BoundingBox>()
             {
                 new()
@@ -41,7 +54,6 @@ public class ObjectDetection
         await Task.Delay(1000);
         return results;
     }
-
 
     public static void Main(string[] args)
     {

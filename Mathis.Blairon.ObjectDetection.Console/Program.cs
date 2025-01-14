@@ -32,7 +32,7 @@ internal class Program
         }
 
         var objectDetection = new ObjectDetection();
-        var detectObjectInScenesResults = await objectDetection.DetectObjectInScenesAsyncMocked(imageScenesData);
+        var detectObjectInScenesResults = await objectDetection.DetectObjectInScenesAsync(imageScenesData);
 
         foreach (var objectDetectionResult in detectObjectInScenesResults)
             System.Console.WriteLine($"Box: {JsonSerializer.Serialize(objectDetectionResult.Box)}");
